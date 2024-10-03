@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+<project name="MyFirstAntExperience" default = "jarfile"> //ACABAR EM CASA
+    //TROCAR PARA .DIR, TEMOS DE ALTERAR OS VALORES DAS VARIAVEIS.
+    //E SEMPRE QUE PRECISO DE ALTERAR ALGUMA COISA APENAS PRECISO DE ALTEREAR AS VARIAVEIS EM CADA UM DOS PROJETOS.
+
+
+    <target name="init" description="creates and initializes ant variable" >
+        <property name="project.name" value="HelloWorld"/>
+    </target>
+
+  <target name="clean" description="deletes the build folder and all its created files" >
+    <delete dir ="build"/>
+    </target>
+
+    <target name = "prepare" description="Creates the build and classes directory " depends="clean" >
+        <mkdir dir="build/classes"/>
+    </target>
+
+<target name = "compile" description="Compiles the source code" depends="prepare" >
+    <javac srcdir= "src" destdir="build/classes"/>
+</target>
+
+    <target name="jarfile" description="Archives and creates the jar file" depends="compile" >
+            <jar destfile="build/HelloWorld.jar"   basedir="build/classes"  />
+    <manifest>
+        <attribute name = "Main-Class" value="io.codeforall.fanstatics.Sandbox" />
+    </manifest>
+    </jar>
+        </target>
+
+        </project>
