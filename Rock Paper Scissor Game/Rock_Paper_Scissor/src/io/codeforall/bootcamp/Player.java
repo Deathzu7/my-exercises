@@ -17,7 +17,7 @@ public Player (String playerName){
 
 
 
-    public static randomizer(){
+    public static void randomizer(){
         int randomizerPlayer= (int) Math.floor(Math.random()*3);
 
     }

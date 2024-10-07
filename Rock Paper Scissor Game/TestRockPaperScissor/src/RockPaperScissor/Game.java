@@ -3,9 +3,9 @@ package RockPaperScissor;
 public class Game {
 
     public static Hand randomizer() {
-        int x = (int) Math.floor(Math.random() * 3);
+        int choice = (int) Math.floor(Math.random() * 3);
 
-        switch (x) {
+        switch (choice) {
 
             case 0:
                 return Hand.ROCK;
@@ -17,19 +17,22 @@ public class Game {
                 return Hand.SCISSOR;
         }
 
+    }
+    public void compareHands(Player player1, Player player2) {
+        Hand hand1 = player1.getPlayerHand();
+        Hand hand2 = player2.getPlayerHand();
 
-        public void Comparation (Hand player1, Hand player2){
-            if ((player1 == Hand.ROCK && player2 == Hand.SCISSOR) ||
-            (player1 == Hand.PAPER && player2 == Hand.ROCK) ||
-                    (player1 == Hand.SCISSOR && player2 == Hand.PAPER));
-            System.out.println("Player1 wins!");
-        }
-        if (player1 == player2) {
-            System.out.println(" Draw ");
-        }
+        System.out.println(player1.getName() + " throws " + hand1);
+        System.out.println(player2.getName() + " throws " + hand2);
 
-        else{
-            System.out.println("Player2 wins!");
+        if (hand1 == hand2) {
+            System.out.println("It's a draw!");
+        } else if ((hand1 == Hand.ROCK && hand2 == Hand.SCISSOR) ||
+                (hand1 == Hand.PAPER && hand2 == Hand.ROCK) ||
+                (hand1 == Hand.SCISSOR && hand2 == Hand.PAPER)) {
+            System.out.println(player1.getName() + " wins!");
+        } else {
+            System.out.println(player2.getName() + " wins!");
         }
 
     }

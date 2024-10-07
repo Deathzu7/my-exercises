@@ -5,9 +5,8 @@ public class Player {
     private String name;
     private Hand playerHand;
 
-    public Player(String name, Hand playerHand) {
+    public Player(String name) {
         this.name = name;
-        this.playerHand = playerHand;
     }
 
     public String getName() {
