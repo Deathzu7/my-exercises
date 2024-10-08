@@ -13,19 +13,6 @@ public class Barrel extends GameObject implements Destroyable {
         this.barrelType = barrelType;
         this.destroyed = false;
 
-        switch (barrelType) {
-            case PLASTIC:
-                barrelType.setMaxDamage(2);
-                break;
-            case WOOD:
-                barrelType.setMaxDamage(3);
-                break;
-            case METAL:
-                barrelType.setMaxDamage(4);
-                break;
-
-        }
-
     }
 
     @Override
@@ -45,7 +32,7 @@ public class Barrel extends GameObject implements Destroyable {
 
     @Override
     public boolean isDestroyed() {
-        return destroyed;
+        return this.destroyed;
     }
 }
 
