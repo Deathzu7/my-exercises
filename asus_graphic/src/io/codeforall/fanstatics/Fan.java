@@ -1,5 +1,6 @@
 package io.codeforall.fanstatics;
 
+import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -10,12 +11,18 @@ import java.security.Key;
 
 public class Fan implements KeyboardHandler {
 
-    private Picture picture;
+    private Picture muscle;
+    private Picture gym;
     private Keyboard keyboard;
 
     public Fan() {
-        picture = new Picture(45,   45, "rsc/fan.jpg");
-        picture.draw();
+        gym = new Picture(300,200,"rsc/gym1.jpeg");
+        gym.draw();
+
+        muscle = new Picture(15, 15, "rsc/images.png");
+        muscle.draw();
+
+
         initKeyboard();
     }
 
@@ -45,16 +52,16 @@ public class Fan implements KeyboardHandler {
     public void keyPressed(KeyboardEvent keyboardEvent) {
         switch (keyboardEvent.getKey()) {
             case KeyboardEvent.KEY_RIGHT:
-                picture.translate(100, 0);
+                muscle.translate(100, 0);
                 break;
             case KeyboardEvent.KEY_LEFT:
-                picture.translate(-100, 0);
+                muscle.translate(-100, 0);
                 break;
             case KeyboardEvent.KEY_UP:
-                picture.translate(0,-100);
+                muscle.translate(0,-100);
                 break;
             case KeyboardEvent.KEY_DOWN:
-                picture.translate(0,100);
+                muscle.translate(0,100);
                 break;
         }
     }
@@ -63,4 +70,6 @@ public class Fan implements KeyboardHandler {
     public void keyReleased(KeyboardEvent keyboardEvent) {
 
     }
+
+
 }
